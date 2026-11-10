@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Unruly Kitten</title>
+<meta name="description" content="Unruly Kitten: indie games. Stuff coming soon.">
+<meta property="og:title" content="Unruly Kitten">
+<meta property="og:description" content="...meowww. Stuff coming soon.">
+<meta property="og:image" content="https://unrulykitten.com/assets/unruly-kitten-logo-1024.png">
+<meta property="og:url" content="https://unrulykitten.com/">
+<meta name="twitter:card" content="summary">
+<link rel="apple-touch-icon" href="assets/unruly-kitten-logo-256.png">
+<link rel="icon" type="image/png" href="assets/unruly-kitten-logo-64.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Space+Grotesk:wght@500;700&display=swap">
+<style>
+/* unrulykitten.com, design B ("poster", chosen 2026-11-10). One flat turquoise field (the logo's own background), a giant pixel kitten,
+   chunky pixel lettering and hard-shadow "sticker" buttons. Single deliberate look; no dark mode. */
+:root {
+  --turq: #00a2e8; --orange: #ff7f27; --ink: #111111; --paper: #ffffff; --rose: #ffaec9; --yellow: #fff200;
+  --f-pixel: "Press Start 2P", ui-monospace, monospace;
+  --f-body: "Space Grotesk", system-ui, sans-serif;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body {
+  min-height: 100vh; background: var(--turq); color: var(--ink); font-family: var(--f-body);
+  display: grid; place-items: center; padding: 40px max(16px, 5vw);
+}
+main { width: min(100%, 880px); display: grid; gap: 28px; justify-items: center; text-align: center; }
+.kitten {
+  width: min(78vw, 448px); aspect-ratio: 1; image-rendering: pixelated; display: block;
+  filter: drop-shadow(10px 10px 0 rgba(0,0,0,.18));
+}
+@media (prefers-reduced-motion: no-preference) {
+  .kitten { animation: wobble 2.4s steps(2) infinite; transform-origin: 50% 90%; }
+  @keyframes wobble { 0%,100% { transform: rotate(-1.5deg); } 50% { transform: rotate(1.5deg); } }
+}
+h1 {
+  margin: 0; font-family: var(--f-pixel); font-weight: 400; color: var(--paper);
+  font-size: clamp(26px, 6.4vw, 58px); line-height: 1.15; letter-spacing: .02em;
+  text-shadow: 4px 4px 0 var(--ink); text-wrap: balance;
+}
+.tag { margin: 0; font-family: var(--f-pixel); font-size: clamp(14px, 2.4vw, 20px); color: var(--yellow); text-shadow: 3px 3px 0 var(--ink); }
+.blurb { margin: 0; max-width: 46ch; font-size: 19px; line-height: 1.5; font-weight: 500; }
+nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; }
+nav a {
+  font-family: var(--f-pixel); font-size: 12px; text-decoration: none; color: var(--ink);
+  background: var(--paper); border: 3px solid var(--ink); padding: 12px 14px; box-shadow: 5px 5px 0 var(--ink);
+  transition: transform .08s, box-shadow .08s;
+}
+nav a:nth-child(3n+1) { background: var(--orange); }
+nav a:nth-child(3n+2) { background: var(--rose); }
+nav a:hover { transform: translate(3px, 3px); box-shadow: 2px 2px 0 var(--ink); }
+nav a:focus-visible { outline: 3px dashed var(--yellow); outline-offset: 4px; }
+.mail { font-size: 17px; }
+.mail a { color: var(--ink); font-weight: 700; text-decoration-thickness: 3px; text-underline-offset: 4px; }
+footer { font-size: 13px; opacity: .75; }
+</style>
+</head>
+<body>
+<main>
+  <img class="kitten" src="assets/unruly-kitten-logo-transparent-1024.png" alt="Unruly Kitten: a crudely drawn calico kitten with one huge eye">
+  <h1>Unruly Kitten</h1>
+  <p class="tag">...meowww</p>
+  <p class="blurb">stuff coming soon</p>
+  <nav aria-label="Unruly Kitten elsewhere">
+    <a href="https://unrulykitten.itch.io">itch.io</a>
+    <a href="https://www.youtube.com/@unrulykittenhq">YouTube</a>
+    <a href="https://x.com/unrulykittenhq">X</a>
+  </nav>
+  <p class="mail">Say hi: <a href="mailto:hello@unrulykitten.com">hello@unrulykitten.com</a></p>
+  <footer>© 2026 Unruly Kitten</footer>
+</main>
+</body>
+</html>
